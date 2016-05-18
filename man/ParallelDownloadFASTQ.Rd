@@ -6,7 +6,14 @@
 \usage{
 ParallelDownloadFASTQ(df, folder = "./", n = 6)
 }
+\value{
+None
+}
 \description{
-Parallel Downloads FASTQ using doMC and a metadata data.frame
+Parallel Downloads FASTQ using a data.frame from RetrieveProjectMetadata
+}
+\examples{
+ParallelDownloadFASTQ(metadata)
+
 }
 

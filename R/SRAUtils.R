@@ -1,6 +1,13 @@
 #' RetrieveProjectData
 #'
 #' This function retrieves all associated metadata and urls to an SRP id
+#'
+#' @return data.frame of metadata and urls
+#'
+#' @examples
+#' RetrieveProjectMetadata("SRPXXXXXX")
+#' 
+#' @export
 
 RetrieveProjectMetadata = function(PID) {
 	ena.url <- paste("http://www.ebi.ac.uk/ena/data/warehouse/filereport?accession=", PID,"&result=read_run",sep="")
@@ -8,9 +15,14 @@ RetrieveProjectMetadata = function(PID) {
 	return(metadata)	
 }
 
-#' RetrieveProjectData
+#' DownloadFASTQ
+#' Downloads FASTQ using a list or a data.frame from RetrieveProjectMetadata
+#' @return None
 #'
-#'Downloads FASTQ files using a metadata data.frame or a list
+#' @examples
+#' DownloadFASTQ(metadata)
+#' 
+#' @export
 
 DownloadFASTQ = function(l, folder="./") {
 	if ("data.frame" %in% is(l)) { l = l$fastq_ftp }
@@ -28,8 +40,15 @@ DownloadFASTQ = function(l, folder="./") {
 }
 
 #' ParallelDownloadFASTQ
+#' 
+#' Parallel Downloads FASTQ using a data.frame from RetrieveProjectMetadata
+#' @return None
 #'
-#' Parallel Downloads FASTQ using doMC and a metadata data.frame
+#' @examples
+#' ParallelDownloadFASTQ(metadata)
+#' 
+#' @export
+
 
 ParallelDownloadFASTQ = function(df, folder="./", n=6) {
 	library(plyr)

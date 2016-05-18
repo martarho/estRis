@@ -6,7 +6,14 @@
 \usage{
 RetrieveProjectMetadata(PID)
 }
+\value{
+data.frame of metadata and urls
+}
 \description{
 This function retrieves all associated metadata and urls to an SRP id
+}
+\examples{
+RetrieveProjectMetadata("SRPXXXXXX")
+
 }
 

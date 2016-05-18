@@ -2,11 +2,20 @@
 % Please edit documentation in R/SRAUtils.R
 \name{DownloadFASTQ}
 \alias{DownloadFASTQ}
-\title{RetrieveProjectData}
+\title{DownloadFASTQ
+Downloads FASTQ using a list or a data.frame from RetrieveProjectMetadata}
 \usage{
 DownloadFASTQ(l, folder = "./")
 }
+\value{
+None
+}
 \description{
-Downloads FASTQ files using a metadata data.frame or a list
+DownloadFASTQ
+Downloads FASTQ using a list or a data.frame from RetrieveProjectMetadata
+}
+\examples{
+DownloadFASTQ(metadata)
+
 }
 
